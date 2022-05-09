@@ -81,6 +81,7 @@ window.onload = () => {
   if (localStorage.lang) lang = Number(localStorage.lang);
   const textarea = document.createElement('textarea');
   document.body.append(textarea);
+  textarea.focus();
   const keyboard = document.createElement('div');
   keyboard.className = 'keyboard';
   document.body.append(keyboard);
@@ -184,7 +185,6 @@ window.onload = () => {
   };
   document.body.addEventListener('keydown', (event)=> {
     event.preventDefault();
-    textarea.focus();
 
     if (keyboard.querySelector('.' + event.code)) {
       keyboard.querySelector('.' + event.code).classList.add('active');
@@ -207,7 +207,9 @@ window.onload = () => {
     }
     if (event.code === 'ShiftRight' || event.code === 'ShiftLeft') ShiftInsert('up');
   });
-
+  textarea.addEventListener('blur', ()=> {
+    textarea.focus();
+  });
   keyboard.addEventListener('click', (event) => {
     if (event.target.classList.contains('key')) {
       event.target.classList.add('active');
