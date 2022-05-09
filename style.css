@@ -19,8 +19,7 @@ body {
   .row {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[46];
-        grid-template-columns: repeat(46, 1fr);
+    grid-template-columns: repeat(46, 1fr);
     margin: 10px 0;
   }
   
@@ -40,8 +39,8 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transition: border-radius .3s,background .2s;
-    transition: border-radius .3s,background .2s;
+    -webkit-transition: border-radius .3s;
+    transition: border-radius .3s;
     cursor: pointer;
   }
   
