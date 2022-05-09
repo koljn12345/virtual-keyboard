@@ -1,0 +1,86 @@
+body {
+    text-align: center;
+  }
+  
+  textarea {
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .keyboard {
+    width: 80%;
+    background: burlywood;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[46];
+        grid-template-columns: repeat(46, 1fr);
+    margin: 10px 0;
+  }
+  
+  .key {
+    background: white;
+    border-radius: 5px;
+    height: 50px;
+    -ms-grid-column-span: 3;
+        grid-column-end: span 3;
+    margin: 0 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: border-radius .3s,background .2s;
+    transition: border-radius .3s,background .2s;
+    cursor: pointer;
+  }
+  
+  .key:hover {
+    -webkit-box-shadow: #00000096 2px 2px 5px;
+            box-shadow: #00000096 2px 2px 5px;
+  }
+  
+  .system,
+  .system_s {
+    background: #9475f1;
+  }
+  
+  .Backspace,
+  .Enter,
+  .ShiftRight {
+    -ms-grid-column-span: 7;
+        grid-column-end: span 7;
+  }
+  
+  .Tab,
+  .ControlLeft,
+  .ControlRight {
+    -ms-grid-column-span: 4;
+        grid-column-end: span 4;
+  }
+  
+  .CapsLock,
+  .ShiftLeft {
+    -ms-grid-column-span: 6;
+        grid-column-end: span 6;
+  }
+  
+  .Space {
+    -ms-grid-column-span: 20;
+        grid-column-end: span 20;
+  }
+  
+  .active {
+    background-color: #f15020;
+    border-radius: 50px;
+  }

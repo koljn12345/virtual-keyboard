@@ -1,4 +1,4 @@
-const keys = [
+const KEYS = [
   [
     ['Backquote', '`', '~', 'ё', 'Ё'],
     ['Digit1', '1', '!', '1', '!'],
@@ -86,26 +86,26 @@ window.onload = () => {
   document.body.append(keyboard);
   if (lang === 0) col = 1;
   else col = 3;
-  for (let i = 0; i < keys.length; i += 1) {
+  for (let i = 0; i < KEYS.length; i += 1) {
     let row = document.createElement('div');
     row.className = 'row';
     keyboard.append(row);
-    for (let j = 0; j < keys[i].length; j += 1) {
+    for (let j = 0; j < KEYS[i].length; j += 1) {
       let key = document.createElement('div');
-      key.className = 'key ' + keys[i][j][0] + ' ' + keys[i][j][5];
-      key.innerHTML = keys[i][j][col];
+      key.className = 'key ' + KEYS[i][j][0] + ' ' + KEYS[i][j][5];
+      key.innerHTML = KEYS[i][j][col];
       row.append(key);
     }
   }
-  function printKey() {
+  const printKey = () => {
     let rowList = document.querySelectorAll('.row');
     for (let i = 0; i < rowList.length; i += 1) {
       let keyList = rowList[i].querySelectorAll('.key');
       for (let j = 0; j < keyList.length; j += 1) {
-        keyList[j].innerHTML = keys[i][j][col];
+        keyList[j].innerHTML = KEYS[i][j][col];
       }
     }
-  }
+  };
 
   function ShiftInsert(flag) {
     if (lang === 0) {
@@ -156,9 +156,8 @@ window.onload = () => {
 
     if (keyboard.querySelector('.' + event.code)) {
       keyboard.querySelector('.' + event.code).classList.add('active');
+      if (!keyboard.querySelector('.' + event.code).classList.contains('system')) { textarea.value += keyboard.querySelector('.' + event.code).innerHTML; }
     }
-
-    if (!keyboard.querySelector('.' + event.code).classList.contains('system')) { textarea.value += keyboard.querySelector('.' + event.code).innerHTML; }
 
     if (event.code === 'CapsLock') CapsLockToggle();
     if (event.code === 'ShiftRight' || event.code === 'ShiftLeft') ShiftInsert('down');
