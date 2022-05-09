@@ -75,7 +75,6 @@ const KEYS = [
   ]
 ];
 window.onload = () => {
-  debugger
   let capsStatus = 0;
   let lang = 0;
   let col;
@@ -234,7 +233,7 @@ window.onload = () => {
           ShiftInsert('up');
         }
       }, 200);
-      if (!event.target.classList.contains('system')) { addSymbol(keyboard.querySelector('.' + event.code).innerHTML); }
+      if (!event.target.classList.contains('system')) { addSymbol(event.target.innerHTML); }
     }
   });
 };
