@@ -75,6 +75,7 @@ const KEYS = [
   ]
 ];
 window.onload = () => {
+  debugger
   let capsStatus = 0;
   let lang = 0;
   let col;
